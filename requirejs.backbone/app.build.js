@@ -9,5 +9,6 @@
         {
             name: "app/main"
         }
-    ]
+    ],
+    mainConfigFile: "web/js/main.js"
 })

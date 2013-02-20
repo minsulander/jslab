@@ -1,5 +1,3 @@
-console.log('mains');
-
 require.config({
 	baseUrl: 'js/lib',
 	paths: { app: '..'},
@@ -21,4 +19,3 @@ requirejs(['jquery', 'underscore', 'backbone', 'app/mymodel', 'app/myview'], fun
 		el: $('#content')
 	}).render();
 });
-console.log('yo');
