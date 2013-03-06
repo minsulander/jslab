@@ -8,6 +8,7 @@
   <script type="text/javascript" src="js/lib/jasmine.js"></script>
   <script type="text/javascript" src="js/lib/jasmine-html.js"></script>
   <script type="text/javascript" src="js/lib/sinon.js"></script>
+  <script type="text/javascript" src="js/lib/phantom-jasmine-console-runner.js"></script>
 
   <!-- include source files here... -->
   <script type="text/javascript" src="js/lib/jquery.js"></script>
@@ -20,13 +21,16 @@
   <script type="text/javascript" src="spec/myspec.js"></script>
 
   <script type="text/javascript">
+    consoleReporter = new jasmine.ConsoleReporter();
+
     (function() {
       var jasmineEnv = jasmine.getEnv();
       jasmineEnv.updateInterval = 1000;
 
       var htmlReporter = new jasmine.HtmlReporter();
-
       jasmineEnv.addReporter(htmlReporter);
+      
+      jasmineEnv.addReporter(consoleReporter);
 
       jasmineEnv.specFilter = function(spec) {
         return htmlReporter.specFilter(spec);
